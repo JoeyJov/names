@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Joey | Names</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="animate.css">
+</head>
+<body>	
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div id="welcome-page">
+					<h1>Welcome</h1>
+					<h3>What is your name?</h3>
+					<form>
+						<div class="input-field col s5">
+							<input id="first-name" type="text" placeholder="First Name">
+							<label class="active" for "first_name2">First Name</label>
+							<div class="row">
+								<div class="col s12">
+									<button type="submit" id="name-button" class="wave-effect waves-light btn green">Submit</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form>
+						<div class="input-field col s2">
+							<input id="middle-name" type="text" placeholder="Middle Name">
+							<label class="active" for "middle_name2">Middle Name</label>
+						</div>
+					</form>
+					<form>
+						<div class="input-field col s5">
+							<input id="last-name" type="text" placeholder="Last Name">
+							<label class="active" for "last_name2">Last Name</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<div id="dashboard">
+					<h3 id="show-player-name"></h3>
+					<h3 id="show-player-name2"></h3>
+					<h3 id="show-player-name3"></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
