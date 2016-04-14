@@ -24,4 +24,8 @@ $(document).ready(function() {
     $('#show-player-name3').text(lastName);
   });
   $('#first-name').focus();
+  function removeWelcomeScreen() {
+    $('#welcome-screen').detach();
+    $('#show-player-name').show().addClass('animated fadeIn');
+  };
 });
