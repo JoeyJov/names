@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var firstName = '';
   var playerAnswer1= '';
-  var answer1= 'Baseball'
+  var answer1= 'Baseball';
   var correctCounter= 0;
 
 
