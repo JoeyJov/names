@@ -43,8 +43,8 @@ $(document).ready(function() {
 
 	// hides question 1
 	$('.question1').hide();
-	$('correct-msg1').hide();
-	$('incorrect-msg1').hide();
+	$('.correct-msg1').hide();
+	$('.incorrect-msg1').hide();
 
 	// QUESTION 1 BUTTON
   $('#question1-btn').on('click', function(e) {
@@ -64,13 +64,13 @@ $(document).ready(function() {
   function answerCheck1() {
   	if(playerAnswer1 === answer1) {
   		console.log("Player's answer is correct");
-  		$('#correct-msg1').show().addClass('animated fadeIn');
+  		$('.correct-msg1').show().addClass('animated fadeIn');
   		correctCounter++;
   		$('#score').text(correctCounter);
   	}
   	else {
   		console.log("Player's answer is Incorrect!");
-  		$('#incorrect-msg1').show().addClass('animated fadeIn');
+  		$('.incorrect-msg1').show().addClass('animated fadeIn');
   	}
   }
 });
