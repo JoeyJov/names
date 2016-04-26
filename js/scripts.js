@@ -7,6 +7,8 @@ $(document).ready(function() {
   var triesLeft= 3;
   var answer2= 'hockey';
   var answer3= 'brown';
+  var answer4= 'world cup';
+  var answer5= 'basketball';
 
 
   // FIRST NAME
@@ -48,13 +50,20 @@ $(document).ready(function() {
 	$('.question1').hide();
 	$('.question2').hide();
 	$('.question3').hide();
+  $('.question4').hide();
+  $('.question5').hide();
 	$('.correct-msg1').hide();
 	$('.incorrect-msg1').hide();
 	$('.correct-msg2').hide();
 	$('.incorrect-msg2').hide();
 	$('.correct-msg3').hide();
 	$('.incorrect-msg3').hide();
+  $('.correct-msg4').hide();
+  $('.incorrect-msg4').hide();
+  $('.correct-msg5').hide();
+  $('.incorrect-msg5').hide();
 	$('#lose-game-msg').hide();
+  $('#won-game-msg').hide();
 
 	/*****************************************************
 		QUESTION 1
@@ -101,13 +110,14 @@ $(document).ready(function() {
   		console.log("Player's answer is correct");
   		$('.correct-msg1').show().addClass('animated fadeIn');
   		correctCounter++;
-  		$('#score').text(correctCounter);
+  		$('#show-player-score').text(correctCounter);
   		setTimeout(fadeOutQuestion1, 2500);
   	}
   	else {
   		console.log("Player's answer is Incorrect!");
   		$('.incorrect-msg1').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
+      triesLeftCountdown();
   	}
   };
 
@@ -121,6 +131,7 @@ $(document).ready(function() {
   	playerAnswer2 = $('#input-question2').val().trim().toLowerCase();
   	console.log('The players answer for question 2 is ' + playerAnswer2);
   	answerCheck2();
+
   });
 
   // SHOW ANSWERS 2
@@ -155,13 +166,14 @@ $(document).ready(function() {
   		console.log("Player's answer is correct");
   		$('.correct-msg2').show().addClass('animated fadeIn');
   		correctCounter++;
-  		$('#score').text(correctCounter);
+  		$('#show-player-score').text(correctCounter);
   		setTimeout(fadeOutQuestion2, 2500);
   	}
   	else {
   		console.log("Player's answer is Incorrect!");
   		$('.incorrect-msg2').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
+      triesLeftCountdown();
   	}
   }
 
@@ -209,13 +221,124 @@ $(document).ready(function() {
   		console.log("Player's answer is correct");
   		$('.correct-msg3').show().addClass('animated fadeIn');
   		correctCounter++;
-  		$('#score').text(correctCounter);
+  		$('#show-player-score').text(correctCounter);
   		setTimeout(fadeOutQuestion3, 2500);
   	}
   	else {
   		console.log("Player's answer is Incorrect!");
   		$('.incorrect-msg3').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
+      triesLeftCountdown();
   	}
+  }
+
+  /*****************************************************
+    QUESTION 4
+  *****************************************************/
+
+  // QUESTION 4 BUTTON
+  $('#question4-btn').on('click', function(e) {
+    e.preventDefault();
+    playerAnswer4 = $('#input-question4').val().trim().toLowerCase();
+    console.log('The players answer for question 4 is ' + playerAnswer4);
+    answerCheck4();
+  });
+
+  // SHOW ANSWERS 4
+  function showPlayerAnswer4(){
+    $('#show-player-answer4').text(playerAnswer4);
+    $('#correct-answer4').text(answer4);
+  };
+
+  function fadeOutAnswerCheckMsg() {
+    $('.incorrect-msg4').removeClass('fadeIn').addClass('fadeOut');
+  }; 
+
+  function fadeOutQuestion4() {
+    $('.question4').addClass('animated fadeOut');
+    setTimeout($('.question4').detach(), 2500);
+    $('.question5').show().addClass('animated fadeIn');
+  };
+
+  function triesLeftCountdown() {
+    triesLeft--;
+    $('#tries-left').text(triesLeft);
+    if(triesLeft === 0) {
+      $('.question4').addClass('animated fadeOut');
+      $('.question4').detach();
+      $('#lose-game-msg').show().addClass('animated fadeIn');
+    };
+  };
+
+  // CHECK ANSWERS 4
+    function answerCheck4() {
+    if(playerAnswer4 === answer4) {
+      console.log("Player's answer is correct");
+      $('.correct-msg4').show().addClass('animated fadeIn');
+      correctCounter++;
+      $('#show-player-score').text(correctCounter);
+      setTimeout(fadeOutQuestion4, 2500);
+    }
+    else {
+      console.log("Player's answer is Incorrect!");
+      $('.incorrect-msg4').show().addClass('animated fadeIn');
+      setTimeout(fadeOutAnswerCheckMsg, 2500);
+      triesLeftCountdown();
+    }
+  }
+
+  /*****************************************************
+    QUESTION 5
+  *****************************************************/
+
+  // QUESTION 5 BUTTON
+  $('#question5-btn').on('click', function(e) {
+    e.preventDefault();
+    playerAnswer5 = $('#input-question5').val().trim().toLowerCase();
+    console.log('The players answer for question 5 is ' + playerAnswer5);
+    answerCheck5();
+  });
+
+  // SHOW ANSWERS 5
+  function showPlayerAnswer5(){
+    $('#show-player-answer5').text(playerAnswer5);
+    $('#correct-answer5').text(answer5);
+  };
+
+  function fadeOutAnswerCheckMsg() {
+    $('.incorrect-msg5').removeClass('fadeIn').addClass('fadeOut');
+  }; 
+
+  function fadeOutQuestion5() {
+    $('.question5').addClass('animated fadeOut');
+    setTimeout($('.question5').detach(), 2500);
+    $('#won-game-msg').show().addClass('animated fadeIn');
+  };
+
+  function triesLeftCountdown() {
+    triesLeft--;
+    $('#tries-left').text(triesLeft);
+    if(triesLeft === 0) {
+      $('.question5').addClass('animated fadeOut');
+      $('.question5').detach();
+      $('#lose-game-msg').show().addClass('animated fadeIn');
+    };
+  };
+
+  // CHECK ANSWERS 5
+    function answerCheck5() {
+    if(playerAnswer5 === answer5) {
+      console.log("Player's answer is correct");
+      $('.correct-msg5').show().addClass('animated fadeIn');
+      correctCounter++;
+      $('#show-player-score').text(correctCounter);
+      setTimeout(fadeOutQuestion5, 2500);
+    }
+    else {
+      console.log("Player's answer is Incorrect!");
+      $('.incorrect-msg5').show().addClass('animated fadeIn');
+      setTimeout(fadeOutAnswerCheckMsg, 2500);
+      triesLeftCountdown();
+    }
   }
 });
