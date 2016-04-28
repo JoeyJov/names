@@ -118,6 +118,7 @@ $(document).ready(function() {
   		$('.incorrect-msg1').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
       triesLeftCountdown();
+      $('#input-question1').val('');
   	}
   };
 
@@ -174,6 +175,7 @@ $(document).ready(function() {
   		$('.incorrect-msg2').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
       triesLeftCountdown();
+      $('#input-question2').val('');
   	}
   }
 
@@ -229,6 +231,7 @@ $(document).ready(function() {
   		$('.incorrect-msg3').show().addClass('animated fadeIn');
   		setTimeout(fadeOutAnswerCheckMsg, 2500);
       triesLeftCountdown();
+      $('#input-question3').val('');
   	}
   }
 
@@ -284,6 +287,7 @@ $(document).ready(function() {
       $('.incorrect-msg4').show().addClass('animated fadeIn');
       setTimeout(fadeOutAnswerCheckMsg, 2500);
       triesLeftCountdown();
+      $('#input-question4').val('');
     }
   }
 
@@ -339,6 +343,15 @@ $(document).ready(function() {
       $('.incorrect-msg5').show().addClass('animated fadeIn');
       setTimeout(fadeOutAnswerCheckMsg, 2500);
       triesLeftCountdown();
+      $('#input-question5').val('');
     }
   }
+
+  /**********************************************************
+  RESTART GAME
+  **********************************************************/
+  $('#restart-game-btn').on('click', function() {
+    console.log('restart-game-btn function fired');
+    location.reload();
+  });
 });
